@@ -30,16 +30,24 @@ export function delAccountAPI(body) {
   return api.post('delaccount', { json: body }).json()
 }
 
+export function remarkupdateAPI(body) {
+  return api.post('update/remark', { json: body }).json()
+}
+
 export function WSCKLoginAPI(body) {
   return api.post('WSCKLogin', { json: body }).json()
 }
 
 export function getWSCKUserinfoAPI(eid) {
   const searchParams = new URLSearchParams()
-  searchParams.set('eid', eid)
+  searchParams.set('wseid', wseid)
   return api.get('WSCKUserinfo', { searchParams: searchParams }).json()
 }
 
 export function WSCKDelaccountAPI(body) {
   return api.post('WSCKDelaccount', { json: body }).json()
+}
+
+export function remarkupdateWSCKAPI(body) {
+  return api.post('updateWSCK/remark', { json: body }).json()
 }
